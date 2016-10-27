@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'DragDropiOS_Example' do
+  
   pod 'DragDropiOS', :path => '../'
 
   target 'DragDropiOS_Tests' do

@@ -5,12 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
 [![Platform](https://img.shields.io/cocoapods/p/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
 
+DragDropiOS is a drag and drop manager on iOS. 
+It supports drag and drop with in one or more classes extends UIView.
+
 ## Example
+
+The example shows a drag and drop demo in one collectionView.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
-
+- iOS 8.0+  
+- Xcode 7.3
+- Swift 2.2
 ## Installation
 
 DragDropiOS is available through [CocoaPods](http://cocoapods.org). To install
@@ -22,7 +29,7 @@ pod "DragDropiOS"
 
 ## Author
 
-rafael zhou, 2008zkapie@163.com
+rafael zhou, wumingapie@gmail.com
 
 ## License
 

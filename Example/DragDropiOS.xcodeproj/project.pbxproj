@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0307AD32B9D4CA107FCF70A5 /* Pods_DragDropiOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DDBAB980579F0A11C088E1 /* Pods_DragDropiOS_Example.framework */; };
 		3AA3D41B3474E4A18DC0A55E /* Pods_DragDropiOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE996197F5CC10A1D974358 /* Pods_DragDropiOS_Tests.framework */; };
+		53BB8E001DBF692E0057DB94 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB8DFF1DBF692E0057DB94 /* CollectionViewCell.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		391DA46AE9F18179A389E6C9 /* DragDropiOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DragDropiOS.podspec; path = ../DragDropiOS.podspec; sourceTree = "<group>"; };
 		3FA76EB543653C8AA00D2E25 /* Pods-DragDropiOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS_Example/Pods-DragDropiOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		53BB8DFF1DBF692E0057DB94 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DragDropiOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragDropiOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for DragDropiOS */ = {
 			isa = PBXGroup;
 			children = (
+				53BB8DFF1DBF692E0057DB94 /* CollectionViewCell.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -361,6 +364,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				53BB8E001DBF692E0057DB94 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
