@@ -14,7 +14,7 @@ import UIKit
     
     optional func collectionView(collectionView: UICollectionView, indexPathForDragInfo dragInfo: AnyObject) -> NSIndexPath?
     func collectionView(collectionView: UICollectionView, dragInfoForIndexPath indexPath: NSIndexPath) -> AnyObject
-    optional func collectionView(collectionView: UICollectionView, representationImageAtIndexPath indexPath: NSIndexPath) -> UIImage
+    optional func collectionView(collectionView: UICollectionView, representationImageAtIndexPath indexPath: NSIndexPath) -> UIImage?
     
     
     //drag
@@ -77,7 +77,13 @@ import UIKit
             
             if dragDropDelegate != nil && dragDropDelegate!.respondsToSelector(#selector(DragDropCollectionViewDelegate.collectionView(_:representationImageAtIndexPath:))){
                 
-                 return dragDropDelegate!.collectionView!(self, representationImageAtIndexPath: indexPath) as! UIView
+                if let cell = self.cellForItemAtIndexPath(indexPath) {
+                    let img = dragDropDelegate!.collectionView!(self, representationImageAtIndexPath: indexPath)
+                    
+                    imageView = UIImageView(image: img)
+                    imageView?.frame = cell.frame
+                }
+                
                 
             }else{
                 if let cell = self.cellForItemAtIndexPath(indexPath) {
@@ -87,7 +93,6 @@ import UIKit
                     UIGraphicsEndImageContext()
                     
                     imageView = UIImageView(image: img)
-                    
                     imageView?.frame = cell.frame
                 }
             }

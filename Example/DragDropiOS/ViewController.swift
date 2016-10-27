@@ -71,6 +71,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
     }
     
+    func collectionView(collectionView: UICollectionView, representationImageAtIndexPath indexPath: NSIndexPath) -> UIImage? {
+        
+        
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
+            UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0)
+            cell.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            
+            let img = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return img
+        }
+        
+        return nil
+        
+    }
+    
     func collectionView(collectionView: UICollectionView, canDragAtIndexPath indexPath: NSIndexPath) -> Bool {
         
         return models[indexPath.item].text != nil

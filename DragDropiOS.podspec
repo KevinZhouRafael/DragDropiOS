@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DragDropiOS'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'DragDropiOS is a drag and drop manager on iOS.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-DragDropiOS is a drag and drop manager on iOS.
+DragDropiOS is a drag and drop manager on iOS.The library supports drag and drop with in one or more classes extends UIView.
                        DESC
 
   s.homepage         = 'https://github.com/KevinChouRafael/DragDropiOS'
