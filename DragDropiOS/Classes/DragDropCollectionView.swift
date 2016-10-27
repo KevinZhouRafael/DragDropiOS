@@ -14,9 +14,7 @@ import UIKit
     
     optional func collectionView(collectionView: UICollectionView, indexPathForDragInfo dragInfo: AnyObject) -> NSIndexPath?
     func collectionView(collectionView: UICollectionView, dragInfoForIndexPath indexPath: NSIndexPath) -> AnyObject
-    
     optional func collectionView(collectionView: UICollectionView, representationImageAtIndexPath indexPath: NSIndexPath) -> UIImage
-    
     
     
     //drag
@@ -32,8 +30,6 @@ import UIKit
     func collectionView(collectionView: UICollectionView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: NSIndexPath,withDropInfo dropInfo:AnyObject,atDropIndexPath dropIndexPath:NSIndexPath) -> Void
     func collectionViewStopDropping(collectionView: UICollectionView)->Void
     
-
-
 }
 
 
