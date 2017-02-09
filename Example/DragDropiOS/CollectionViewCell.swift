@@ -12,26 +12,26 @@ class CollectionViewCell: UICollectionViewCell {
     
     static let IDENTIFIER = "COLLECTION_VIEW_CELL"
     
-    @IBOutlet weak var contentLabel:UILabel!
+    @IBOutlet weak var imageView:UIImageView!
     
     var model:Model!
     
     override func awakeFromNib() {
-        backgroundColor = UIColor.whiteColor()
-        layer.borderColor = UIColor.lightGrayColor().CGColor
+        backgroundColor = UIColor.white
+        layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 0.5
     }
     
     
-    func updateData(model:Model){
+    func updateData(_ model:Model){
         self.model = model
         if model.text != nil {
             selectedStatus()
-            contentLabel.text = model.text!
+            imageView.image = UIImage(named: model.imageName!)
         }else{
             nomoralStatus()
             
-            contentLabel.text = ""
+            imageView.image = nil
         }
     }
     
@@ -40,15 +40,15 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func moveOverStatus(){
-        backgroundColor = UIColor.orangeColor().colorWithAlphaComponent(0.5)
+        backgroundColor = UIColor.orange.withAlphaComponent(0.5)
     }
     
     func nomoralStatus(){
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
     }
     
     func selectedStatus(){
-        backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
+        backgroundColor = UIColor.blue.withAlphaComponent(0.5)
     }
     
 

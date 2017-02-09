@@ -10,42 +10,43 @@
 import UIKit
 
 @objc public protocol Draggable:NSObjectProtocol {
-    optional func touchBeginAtPoint(point : CGPoint) -> Void
+    @objc optional func touchBeginAtPoint(_ point : CGPoint) -> Void
     
-    func canDragAtPoint(point : CGPoint) -> Bool
-    func representationImageAtPoint(point : CGPoint) -> UIView?
-    func dragInfoAtPoint(point : CGPoint) -> AnyObject?
-    func dragComplete(dragInfo:AnyObject,dropInfo : AnyObject) -> Void
+    func canDragAtPoint(_ point : CGPoint) -> Bool
+    func representationImageAtPoint(_ point : CGPoint) -> UIView?
+    func dragInfoAtPoint(_ point : CGPoint) -> AnyObject?
+    func dragComplete(_ dragInfo:AnyObject,dropInfo : AnyObject?) -> Void
     
-    optional func stopDragging() -> Void
+    @objc optional func stopDragging() -> Void
 }
 
 
 @objc public protocol Droppable:NSObjectProtocol {
-    func canDropWithDragInfo(dragInfo:AnyObject, inRect rect : CGRect) -> Bool
+    func canDropWithDragInfo(_ dragInfo:AnyObject, inRect rect : CGRect) -> Bool
+    func dropOverInfoInRect(_ rect:CGRect) -> AnyObject?
+    @objc optional func dropOutside(_ dragInfo:AnyObject, inRect rect:CGRect)->Void
     
-    optional func willMoveItem(item : AnyObject, inRect rect : CGRect) -> Void
-    optional func didMoveItem(item : AnyObject, inRect rect : CGRect) -> Void
-    optional func didMoveOutItem(item : AnyObject) -> Void
+    @objc optional func willMoveItem(_ item : AnyObject, inRect rect : CGRect) -> Void
+    @objc optional func didMoveItem(_ item : AnyObject, inRect rect : CGRect) -> Void
+    @objc optional func didMoveOutItem(_ item : AnyObject) -> Void
     
-    func dropComplete(dragInfo : AnyObject,dropInfo:AnyObject, atRect : CGRect) -> Void
+    func dropComplete(_ dragInfo : AnyObject,dropInfo:AnyObject?, atRect : CGRect) -> Void
     
-    func dropOverInfoInRect(rect:CGRect) -> AnyObject?
-    func checkFroEdgesAndScroll(item : AnyObject, inRect rect : CGRect) -> Void
+    @objc optional func checkFroEdgesAndScroll(_ item : AnyObject, inRect rect : CGRect) -> Void
     
-    optional func stopDropping() -> Void
+    @objc optional func stopDropping() -> Void
 }
 
 
-public class DragDropManager:NSObject,UIGestureRecognizerDelegate {
+open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     
-     var canvas : UIView = UIView()
-     var views : [UIView] = []
-     var longPressGestureRecogniser = UILongPressGestureRecognizer()
+    var canvas : UIView = UIView()
+    var views : [UIView] = []
+    var longPressGestureRecogniser = UILongPressGestureRecognizer()
     
     
     struct Bundle {
-        var offset : CGPoint = CGPointZero
+        var offset : CGPoint = CGPoint.zero
         var sourceDraggableView : UIView
         var overDroppableView : UIView?
         var representationImageView : UIView
@@ -55,7 +56,7 @@ public class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     var bundle : Bundle?
     
     
-    public init(canvas : UIView, collectionViews : [UIView]) {
+    public init(canvas : UIView, views : [UIView]) {
         
         super.init()
         
@@ -66,28 +67,31 @@ public class DragDropManager:NSObject,UIGestureRecognizerDelegate {
         self.longPressGestureRecogniser.addTarget(self, action: #selector(DragDropManager.updateForLongPress(_:)))
         
         self.canvas.addGestureRecognizer(self.longPressGestureRecogniser)
-        self.views = collectionViews
+        self.views = views
     }
     
-     public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+     open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         
         for view in self.views.filter({ v -> Bool in v is Draggable})  {
             
                 let draggable = view as! Draggable
                 
-                let touchPointInView = touch.locationInView(view)
+                let touchPointInView = touch.location(in: view)
                 
                 if draggable.canDragAtPoint(touchPointInView) == true {
                     
                     if let representation = draggable.representationImageAtPoint(touchPointInView) {
                         
-                        representation.frame = self.canvas.convertRect(representation.frame, fromView: view)
+                        representation.frame = self.canvas.convert(representation.frame, from: view)
                         
                         representation.alpha = 0.7
                         
-                        let pointOnCanvas = touch.locationInView(self.canvas)
+                        let pointOnCanvas = touch.location(in: self.canvas)
                         
-                        let offset = CGPointMake(pointOnCanvas.x - representation.frame.origin.x, pointOnCanvas.y - representation.frame.origin.y)
+                        let offset = CGPoint(x: pointOnCanvas.x - representation.frame.origin.x, y: pointOnCanvas.y - representation.frame.origin.y)
+                        
+                        
+                        debugPrint("按下在canvas中的点：%@, view中的点 %@, 换算view中的点 %@,",pointOnCanvas,touchPointInView,offset)
                         
                         if let dataItem : AnyObject = draggable.dragInfoAtPoint(touchPointInView) {
                             
@@ -119,95 +123,136 @@ public class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     
     
     
-     public func updateForLongPress(recognizer : UILongPressGestureRecognizer) -> Void {
+     open func updateForLongPress(_ recognizer : UILongPressGestureRecognizer) -> Void {
         
         if var bundle = self.bundle {
             
-            let pointOnCanvas = recognizer.locationInView(recognizer.view)
+            let pointOnCanvas = recognizer.location(in: recognizer.view)
             let sourceDraggable : Draggable = bundle.sourceDraggableView as! Draggable
-            let pointOnSourceDraggable = recognizer.locationInView(bundle.sourceDraggableView)
+            let pointOnSourceDraggable = recognizer.location(in: bundle.sourceDraggableView)
             
             switch recognizer.state {
                 
                 
-            case .Began :
+            case .began :
                 self.canvas.addSubview(bundle.representationImageView)
                 sourceDraggable.touchBeginAtPoint?(pointOnSourceDraggable)
                 
-            case .Changed :
+            case .changed :
                 
                 // Update the frame of the representation image
+                
                 var repImgFrame = bundle.representationImageView.frame
-                repImgFrame.origin = CGPointMake(pointOnCanvas.x - bundle.offset.x, pointOnCanvas.y - bundle.offset.y);
+                repImgFrame.origin = CGPoint(x: pointOnCanvas.x - bundle.offset.x, y: pointOnCanvas.y - bundle.offset.y);
                 bundle.representationImageView.frame = repImgFrame
                 
                 var overlappingArea : CGFloat = 0.0
                 
-                var mainOverView : UIView?
+                var currentOverView : UIView?
                 
                 for view in self.views.filter({ v -> Bool in v is Droppable }) {
                  
                     let viewFrameOnCanvas = self.convertRectToCanvas(view.frame, fromView: view)
                     
                     
-                    let intersectionNew = CGRectIntersection(bundle.representationImageView.frame, viewFrameOnCanvas).size
+                    let intersectionNew = bundle.representationImageView.frame.intersection(viewFrameOnCanvas).size
                     
                     
                     if (intersectionNew.width * intersectionNew.height) > overlappingArea {
                         
                         overlappingArea = intersectionNew.width * intersectionNew.width
                         
-                        mainOverView = view
+                        currentOverView = view
                     }
-
                     
+                }
+                if currentOverView == nil {
+                    currentOverView = recognizer.view
                 }
                 
                 
                 
-                if let droppable = mainOverView as? Droppable {
+                if let droppable = currentOverView as? Droppable {
                     
-                    let rect = self.canvas.convertRect(bundle.representationImageView.frame, toView: mainOverView)
+                    let rect = self.canvas.convert(bundle.representationImageView.frame, to: currentOverView)
                     
                     if droppable.canDropWithDragInfo(bundle.dragInfo, inRect: rect) {
                         
 //                        debugPrint("can drop \(rect)")
                         bundle.dropInfo = droppable.dropOverInfoInRect(rect)
-                        if mainOverView != bundle.overDroppableView { // if it is the first time we are entering
+                        
+                        //currentOverView -> new over View
+                        // bundle.overDroppableView -> old over View
+                        if currentOverView != bundle.overDroppableView { // if it is the first time we are entering
                             
-                            if (bundle.overDroppableView as! Droppable).respondsToSelector(#selector(Droppable.didMoveOutItem(_:))) {
+                            if bundle.overDroppableView != nil{
                                 
-                                (bundle.overDroppableView as! Droppable).didMoveOutItem!(bundle.dragInfo)
-                            }
-                            
-                            if droppable.respondsToSelector(#selector(Droppable.willMoveItem(_:inRect:))){
-                                
-                                droppable.willMoveItem!(bundle.dragInfo, inRect: rect)
+                                if let overDropableView = bundle.overDroppableView as? Droppable {
+                                    
+                                    if overDropableView.responds(to: #selector(Droppable.didMoveOutItem(_:)))
+                                    {
+                                        
+                                        overDropableView.didMoveOutItem!(bundle.dragInfo)
+                                    }
+                                    
+                                    if droppable.responds(to: #selector(Droppable.willMoveItem(_:inRect:))){
+                                        
+                                        droppable.willMoveItem!(bundle.dragInfo, inRect: rect)
+                                    }
+                                    
+                                    
+                                    if overDropableView.responds(to: #selector(Droppable.dropOutside(_:inRect:))){
+                                        overDropableView.dropOutside!(bundle.dragInfo, inRect: rect)
+                                    }
+                                }
                             }
                             
                         }
                         
                         // set the view the dragged element is over
-                        self.bundle!.overDroppableView = mainOverView
+                        self.bundle!.overDroppableView = currentOverView
                         
-                        if droppable.respondsToSelector(#selector(Droppable.didMoveItem(_:inRect:))) {
+                        if droppable.responds(to: #selector(Droppable.didMoveItem(_:inRect:))) {
                             
                             droppable.didMoveItem!(bundle.dragInfo, inRect: rect)
                         }
                         
+                        
                         // can't drop with drag into
                     }else{
-                        bundle.dropInfo = nil
+                        self.bundle!.overDroppableView = currentOverView
+                        
+                        //currentOverView -> new over View
+                        // bundle.overDroppableView -> old over View
+                        
+                        if currentOverView != bundle.overDroppableView { // drag into other view
+                            
+                            if bundle.overDroppableView != nil{
+                                if let overDropableView = bundle.overDroppableView as? Droppable {
+                                    
+                                    if overDropableView.responds(to: #selector(Droppable.dropOutside(_:inRect:))){
+                                        overDropableView.dropOutside!(bundle.dragInfo, inRect: rect)
+                                    }
+                                }
+                            }
+                        }
+                        
+                        self.bundle!.overDroppableView = currentOverView
+
                     }
                     
                     
+                    
                     //checkForEdgesAndScroll when every recognizer changed
-                    (bundle.overDroppableView as! Droppable).checkFroEdgesAndScroll(bundle.dragInfo, inRect: rect)
+                    if (bundle.overDroppableView as! Droppable).responds(to: #selector(Droppable.checkFroEdgesAndScroll(_:inRect:))) {
+                        
+                        (bundle.overDroppableView as! Droppable).checkFroEdgesAndScroll!(bundle.dragInfo, inRect: rect)
+                    }
                     
                 }
                 
                
-            case .Ended :
+            case .ended :
                 
 //                if bundle.sourceDraggableView != bundle.overDroppableView { // if we are actually dropping over a new view.
                 
@@ -215,14 +260,14 @@ public class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                     
                     if let droppable = bundle.overDroppableView as? Droppable {
                         
-                        let rect = self.canvas.convertRect(bundle.representationImageView.frame, toView: bundle.overDroppableView)
+                        let rect = self.canvas.convert(bundle.representationImageView.frame, to: bundle.overDroppableView)
                         
                         
                         if droppable.canDropWithDragInfo(bundle.dragInfo, inRect: rect) {
                             
                             bundle.dropInfo = droppable.dropOverInfoInRect(rect)
                             
-                            sourceDraggable.dragComplete(bundle.dragInfo,dropInfo: bundle.dropInfo!)
+                            sourceDraggable.dragComplete(bundle.dragInfo,dropInfo: bundle.dropInfo)
                             droppable.dropComplete(bundle.dragInfo,dropInfo: bundle.dragInfo, atRect: rect)
                             
                             droppable.stopDropping?()
@@ -252,7 +297,7 @@ public class DragDropManager:NSObject,UIGestureRecognizerDelegate {
  
     
     // MARK: Helper Methods 
-    func convertRectToCanvas(rect : CGRect, fromView view : UIView) -> CGRect {
+    func convertRectToCanvas(_ rect : CGRect, fromView view : UIView) -> CGRect {
         
         var r : CGRect = rect
         

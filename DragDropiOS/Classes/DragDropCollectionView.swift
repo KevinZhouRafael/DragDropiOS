@@ -12,39 +12,40 @@ import UIKit
 
 @objc public protocol DragDropCollectionViewDelegate : NSObjectProtocol {
     
-    optional func collectionView(collectionView: UICollectionView, indexPathForDragInfo dragInfo: AnyObject) -> NSIndexPath?
-    func collectionView(collectionView: UICollectionView, dragInfoForIndexPath indexPath: NSIndexPath) -> AnyObject
-    optional func collectionView(collectionView: UICollectionView, representationImageAtIndexPath indexPath: NSIndexPath) -> UIImage?
+    @objc optional func collectionView(_ collectionView: UICollectionView, indexPathForDragInfo dragInfo: AnyObject) -> IndexPath?
+    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject
+    @objc optional func collectionView(_ collectionView: UICollectionView, representationImageAtIndexPath indexPath: IndexPath) -> UIImage?
     
     
     //drag
-    func collectionView(collectionView: UICollectionView, touchBeginAtIndexPath indexPath:NSIndexPath) -> Void
-    func collectionView(collectionView: UICollectionView, canDragAtIndexPath indexPath: NSIndexPath) -> Bool
+    func collectionView(_ collectionView: UICollectionView, touchBeginAtIndexPath indexPath:IndexPath) -> Void
+    func collectionView(_ collectionView: UICollectionView, canDragAtIndexPath indexPath: IndexPath) -> Bool
 
-    func collectionView(collectionView: UICollectionView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: NSIndexPath,withDropInfo dropInfo:AnyObject) -> Void
-    func collectionViewStopDragging(collectionView: UICollectionView)->Void
+    func collectionView(_ collectionView: UICollectionView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath,withDropInfo dropInfo:AnyObject?) -> Void
+    func collectionViewStopDragging(_ collectionView: UICollectionView)->Void
     
     
     //drop
-    func collectionView(collectionView: UICollectionView, canDropWithDragInfo info:AnyObject, AtIndexPath indexPath: NSIndexPath) -> Bool
-    func collectionView(collectionView: UICollectionView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: NSIndexPath,withDropInfo dropInfo:AnyObject,atDropIndexPath dropIndexPath:NSIndexPath) -> Void
-    func collectionViewStopDropping(collectionView: UICollectionView)->Void
+    func collectionView(_ collectionView: UICollectionView, canDropWithDragInfo info:AnyObject, AtIndexPath indexPath: IndexPath) -> Bool
+    @objc optional func collectionView(_ collectionView: UICollectionView, dropOutsideWithDragInfo info:AnyObject) -> Void
+    func collectionView(_ collectionView: UICollectionView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?,atDropIndexPath dropIndexPath:IndexPath) -> Void
+    func collectionViewStopDropping(_ collectionView: UICollectionView)->Void
     
 }
 
 
-@objc public class DragDropCollectionView: UICollectionView, Draggable, Droppable {
+@objc open class DragDropCollectionView: UICollectionView, Draggable, Droppable {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    private var draggingPathOfCellBeingDragged : NSIndexPath?
+    fileprivate var draggingPathOfCellBeingDragged : IndexPath?
     
-    private var iDataSource : UICollectionViewDataSource?
-    private var iDelegate : UICollectionViewDelegate?
+    fileprivate var iDataSource : UICollectionViewDataSource?
+    fileprivate var iDelegate : UICollectionViewDelegate?
     
-    public var dragDropDelegate:DragDropCollectionViewDelegate?
+    open var dragDropDelegate:DragDropCollectionViewDelegate?
     
     
     override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -54,30 +55,30 @@ import UIKit
     
 
     // MARK : Draggable
-    public func canDragAtPoint(point : CGPoint) -> Bool {
+    open func canDragAtPoint(_ point : CGPoint) -> Bool {
         
         guard self.dragDropDelegate != nil else {
             return false
         }
         
-        if let indexPath = self.indexPathForItemAtPoint(point) {
+        if let indexPath = self.indexPathForItem(at: point) {
 
             return dragDropDelegate!.collectionView(self, canDragAtIndexPath: indexPath)
             
         }
         
-        return self.indexPathForItemAtPoint(point) != nil
+        return self.indexPathForItem(at: point) != nil
     }
     
-    public func representationImageAtPoint(point : CGPoint) -> UIView? {
+    open func representationImageAtPoint(_ point : CGPoint) -> UIView? {
         
         var imageView : UIView?
         
-        if let indexPath = self.indexPathForItemAtPoint(point) {
+        if let indexPath = self.indexPathForItem(at: point) {
             
-            if dragDropDelegate != nil && dragDropDelegate!.respondsToSelector(#selector(DragDropCollectionViewDelegate.collectionView(_:representationImageAtIndexPath:))){
+            if dragDropDelegate != nil && dragDropDelegate!.responds(to: #selector(DragDropCollectionViewDelegate.collectionView(_:representationImageAtIndexPath:))){
                 
-                if let cell = self.cellForItemAtIndexPath(indexPath) {
+                if let cell = self.cellForItem(at: indexPath) {
                     let img = dragDropDelegate!.collectionView!(self, representationImageAtIndexPath: indexPath)
                     
                     imageView = UIImageView(image: img)
@@ -86,9 +87,9 @@ import UIKit
                 
                 
             }else{
-                if let cell = self.cellForItemAtIndexPath(indexPath) {
+                if let cell = self.cellForItem(at: indexPath) {
                     UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0)
-                    cell.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+                    cell.layer.render(in: UIGraphicsGetCurrentContext()!)
                     let img = UIGraphicsGetImageFromCurrentImageContext()
                     UIGraphicsEndImageContext()
                     
@@ -103,11 +104,11 @@ import UIKit
         return imageView
     }
     
-    public func dragInfoAtPoint(point : CGPoint) -> AnyObject? {
+    open func dragInfoAtPoint(_ point : CGPoint) -> AnyObject? {
         
         var dataItem : AnyObject?
         
-        if let indexPath = self.indexPathForItemAtPoint(point) {
+        if let indexPath = self.indexPathForItem(at: point) {
             
             if dragDropDelegate != nil {
                 
@@ -121,9 +122,9 @@ import UIKit
     
     
     
-    public func touchBeginAtPoint(point : CGPoint) -> Void {
+    open func touchBeginAtPoint(_ point : CGPoint) -> Void {
         
-        self.draggingPathOfCellBeingDragged = self.indexPathForItemAtPoint(point)
+        self.draggingPathOfCellBeingDragged = self.indexPathForItem(at: point)
         
         if dragDropDelegate != nil {
     
@@ -136,12 +137,12 @@ import UIKit
     
 
     
-    public func stopDragging() -> Void {
+    open func stopDragging() -> Void {
         invalidateDisplayLink()
         
         if let idx = self.draggingPathOfCellBeingDragged {
-            if let cell = self.cellForItemAtIndexPath(idx) {
-                cell.hidden = false
+            if let cell = self.cellForItem(at: idx) {
+                cell.isHidden = false
             }
         }
         
@@ -155,7 +156,7 @@ import UIKit
         
     }
     
-    public func dragComplete(dragInfo:AnyObject,dropInfo : AnyObject) -> Void {
+    open func dragComplete(_ dragInfo:AnyObject,dropInfo : AnyObject?) -> Void {
         
         if dragDropDelegate != nil {
             
@@ -172,7 +173,7 @@ import UIKit
     
     // MARK : Droppable
 
-    public func canDropWithDragInfo(item: AnyObject,  inRect rect: CGRect) -> Bool {
+    open func canDropWithDragInfo(_ item: AnyObject,  inRect rect: CGRect) -> Bool {
         if let indexPath = self.indexPathForCellOverlappingRect(rect) {
             if dragDropDelegate != nil {
                 
@@ -184,7 +185,7 @@ import UIKit
         return false
     }
 
-    public func dropOverInfoInRect(rect: CGRect) -> AnyObject? {
+    open func dropOverInfoInRect(_ rect: CGRect) -> AnyObject? {
         if let indexPath = self.indexPathForCellOverlappingRect(rect) {
             if dragDropDelegate != nil {
                 
@@ -196,16 +197,16 @@ import UIKit
     }
     
 
-    func indexPathForCellOverlappingRect( rect : CGRect) -> NSIndexPath? {
+    func indexPathForCellOverlappingRect( _ rect : CGRect) -> IndexPath? {
         
         let centerPoint = CGPoint(x: rect.minX + rect.width/2, y: rect.minY + rect.height/2)
         
         
-        for cell in visibleCells() {
+        for cell in visibleCells {
             
-            if CGRectContainsPoint(cell.frame, centerPoint) {
+            if cell.frame.contains(centerPoint) {
                 
-                return self.indexPathForCell(cell)
+                return self.indexPath(for: cell)
             }
             
         }
@@ -213,7 +214,13 @@ import UIKit
         return nil
     }
     
-    public func stopDropping() {
+    open func dropOutside(_ dragInfo: AnyObject, inRect rect: CGRect) {
+        if dragDropDelegate != nil && dragDropDelegate!.responds(to: #selector(DragDropCollectionViewDelegate.collectionView(_:dropOutsideWithDragInfo:))){
+            dragDropDelegate!.collectionView!(self, dropOutsideWithDragInfo: dragInfo)
+        }
+    }
+    
+    open func stopDropping() {
         if dragDropDelegate != nil {
             
             dragDropDelegate!.collectionViewStopDropping(self)
@@ -225,11 +232,11 @@ import UIKit
     
  
     var isHorizontal : Bool {
-        return (self.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection == .Horizontal
+        return (self.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection == .horizontal
     }
     
     
-    public func checkFroEdgesAndScroll(item : AnyObject, inRect rect : CGRect) -> Void {
+    open func checkFroEdgesAndScroll(_ item : AnyObject, inRect rect : CGRect) -> Void {
         startDisplayLink()
         
         // Check Paging
@@ -242,7 +249,7 @@ import UIKit
         
     }
     
-    public func dropComplete(dragInfo : AnyObject,dropInfo:AnyObject, atRect rect: CGRect) -> Void{
+    open func dropComplete(_ dragInfo : AnyObject,dropInfo:AnyObject?, atRect rect: CGRect) -> Void{
         
         if let dropIndexPath = self.indexPathForCellOverlappingRect(rect) {
             if  let dragIndexPath = draggingPathOfCellBeingDragged{
@@ -251,6 +258,11 @@ import UIKit
                     
                 }
                 
+            }else{
+                if dragDropDelegate != nil {
+                    dragDropDelegate!.collectionView(self, dropCompleteWithDragInfo: dragInfo, atDragIndexPath: nil, withDropInfo: dropInfo, atDropIndexPath: dropIndexPath)
+                    
+                }
             }
 
         }
@@ -265,21 +277,21 @@ import UIKit
 
 
     //scroll relate
-    private var displayLink: CADisplayLink?
+    fileprivate var displayLink: CADisplayLink?
     internal var scrollSpeedValue: CGFloat = 10.0
-    var scrollDirection:UICollectionViewScrollDirection = .Vertical
-    private var dragRectCurrent:CGRect!
+    var scrollDirection:UICollectionViewScrollDirection = .vertical
+    fileprivate var dragRectCurrent:CGRect!
     
-    private func startDisplayLink() {
+    fileprivate func startDisplayLink() {
         guard displayLink == nil else {
             return
         }
         
         displayLink = CADisplayLink(target: self, selector: #selector(DragDropCollectionView.handlerDisplayLinkToContinuousScroll))
-        displayLink!.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        displayLink!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
     }
     
-    private func invalidateDisplayLink() {
+    fileprivate func invalidateDisplayLink() {
         displayLink?.invalidate()
         displayLink = nil
         dragRectCurrent = nil
@@ -299,13 +311,13 @@ import UIKit
             let leftBoundary = CGRect(x: -30.0, y: 0.0, width: 30.0, height: self.frame.size.height)
             let rightBoundary = CGRect(x: self.frame.size.width, y: 0.0, width: 30.0, height: self.frame.size.height)
             
-            if CGRectIntersectsRect(dragRectCurrent, leftBoundary) == true {
+            if dragRectCurrent.intersects(leftBoundary) == true {
                 rectForNextScroll.origin.x -= self.bounds.size.width * 0.5
                 if rectForNextScroll.origin.x < 0 {
                     rectForNextScroll.origin.x = 0
                 }
             }
-            else if CGRectIntersectsRect(dragRectCurrent, rightBoundary) == true {
+            else if dragRectCurrent.intersects(rightBoundary) == true {
                 rectForNextScroll.origin.x += self.bounds.size.width * 0.5
                 if rectForNextScroll.origin.x > self.contentSize.width - self.bounds.size.width {
                     rectForNextScroll.origin.x = self.contentSize.width - self.bounds.size.width
@@ -318,13 +330,13 @@ import UIKit
             let bottomBoundary = CGRect(x: 0.0, y: self.frame.size.height, width: self.frame.size.width, height: 30.0)
             
             
-            if CGRectIntersectsRect(dragRectCurrent, topBoundary) == true {
+            if dragRectCurrent.intersects(topBoundary) == true {
                 rectForNextScroll.origin.y -= 5
                 if rectForNextScroll.origin.y < 0 {
                     rectForNextScroll.origin.y = 0
                 }
             }
-            else if CGRectIntersectsRect(dragRectCurrent, bottomBoundary) == true {
+            else if dragRectCurrent.intersects(bottomBoundary) == true {
 //                debugPrint("move in bottomboundary : \(dragRectCurrent)")
                 rectForNextScroll.origin.y += 5
                 if rectForNextScroll.origin.y > self.contentSize.height - self.bounds.size.height {
@@ -333,7 +345,7 @@ import UIKit
             }
         }
         
-        if CGRectEqualToRect(currentRect, rectForNextScroll) == false {
+        if currentRect.equalTo(rectForNextScroll) == false {
             
             scrollRectToVisible(rectForNextScroll, animated: false)
 
