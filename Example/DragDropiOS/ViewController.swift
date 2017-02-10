@@ -25,7 +25,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0 ..< 20 {
+        for i in 0 ..< 30 {
             let model = Model()
             model.index = i
             if i == 0 {

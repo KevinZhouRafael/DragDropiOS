@@ -74,10 +74,13 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
         
         for view in self.views.filter({ v -> Bool in v is Draggable})  {
             
-                let draggable = view as! Draggable
+            debugPrint("view：%@, ",view)
+            
+            let draggable = view as! Draggable
                 
-                let touchPointInView = touch.location(in: view)
-                
+            let touchPointInView = touch.location(in: view)
+            
+            if view.bounds.contains(touchPointInView) {
                 if draggable.canDragAtPoint(touchPointInView) == true {
                     
                     if let representation = draggable.representationImageAtPoint(touchPointInView) {
@@ -91,8 +94,6 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                         let offset = CGPoint(x: pointOnCanvas.x - representation.frame.origin.x, y: pointOnCanvas.y - representation.frame.origin.y)
                         
                         
-                        debugPrint("按下在canvas中的点：%@, view中的点 %@, 换算view中的点 %@,",pointOnCanvas,touchPointInView,offset)
-                        
                         if let dataItem : AnyObject = draggable.dragInfoAtPoint(touchPointInView) {
                             
                             self.bundle = Bundle(
@@ -105,15 +106,16 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                             )
                             
                             return true
-                    
+                            
                         } // if let dataIte...
                         
-                
+                        
                     } // if let representation = dragg...
-                   
-           
-            } // if draggable.canDragAtP...
-            
+                    
+                    
+                } // if draggable.canDragAtP...
+            }// end if contains
+ 
         } // for view in self.views.fil...
         
         return false
