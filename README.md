@@ -13,9 +13,12 @@ This library contains a UICollectionView implenment of drag and drop manager.
 
 ## Example
 
-The example shows a drag and drop demo in one collectionView.
+The example shows a drag and drop demo between UICollectionView and UIViews.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+![Simple image](https://raw.githubusercontent.com/KevinChouRafael/DragDropiOS/master/dragdropdemo.gif)
+
 
 ## Requirements
 
@@ -37,14 +40,14 @@ pod "DragDropiOS"
 
 ```swift
 @objc public protocol Draggable:NSObjectProtocol {
-    optional func touchBeginAtPoint(point : CGPoint) -> Void
+    @objc optional func touchBeginAtPoint(_ point : CGPoint) -> Void
     
-    func canDragAtPoint(point : CGPoint) -> Bool
-    func representationImageAtPoint(point : CGPoint) -> UIView?
-    func dragInfoAtPoint(point : CGPoint) -> AnyObject?
-    func dragComplete(dragInfo:AnyObject,dropInfo : AnyObject) -> Void
+    func canDragAtPoint(_ point : CGPoint) -> Bool
+    func representationImageAtPoint(_ point : CGPoint) -> UIView?
+    func dragInfoAtPoint(_ point : CGPoint) -> AnyObject?
+    func dragComplete(_ dragInfo:AnyObject,dropInfo : AnyObject?) -> Void
     
-    optional func stopDragging() -> Void
+    @objc optional func stopDragging() -> Void
 }
 ```
 
@@ -52,19 +55,19 @@ pod "DragDropiOS"
 
 ```swift
 @objc public protocol Droppable:NSObjectProtocol {
-    func canDropWithDragInfo(dragInfo:AnyObject, inRect rect : CGRect) -> Bool
+    func canDropWithDragInfo(_ dragInfo:AnyObject, inRect rect : CGRect) -> Bool
+    func dropOverInfoInRect(_ rect:CGRect) -> AnyObject?
+    @objc optional func dropOutside(_ dragInfo:AnyObject, inRect rect:CGRect)->Void
     
-    optional func willMoveItem(item : AnyObject, inRect rect : CGRect) -> Void
-    optional func didMoveItem(item : AnyObject, inRect rect : CGRect) -> Void
-    optional func didMoveOutItem(item : AnyObject) -> Void
+    @objc optional func willMoveItem(_ item : AnyObject, inRect rect : CGRect) -> Void
+    @objc optional func didMoveItem(_ item : AnyObject, inRect rect : CGRect) -> Void
+    @objc optional func didMoveOutItem(_ item : AnyObject) -> Void
     
-    func dropComplete(dragInfo : AnyObject,dropInfo:AnyObject, atRect : CGRect) -> Void
+    func dropComplete(_ dragInfo : AnyObject,dropInfo:AnyObject?, atRect : CGRect) -> Void
     
-    func dropOverInfoInRect(rect:CGRect) -> AnyObject?
-    func checkFroEdgesAndScroll(item : AnyObject, inRect rect : CGRect) -> Void
+    @objc optional func checkFroEdgesAndScroll(_ item : AnyObject, inRect rect : CGRect) -> Void
     
-    optional func stopDropping() -> Void
-}
+    @objc optional func stopDropping() -> Void
 }
 ```
 
@@ -72,30 +75,31 @@ pod "DragDropiOS"
 ```swift
 @objc public protocol DragDropCollectionViewDelegate : NSObjectProtocol {
     
-    optional func collectionView(collectionView: UICollectionView, indexPathForDragInfo dragInfo: AnyObject) -> NSIndexPath?
-    func collectionView(collectionView: UICollectionView, dragInfoForIndexPath indexPath: NSIndexPath) -> AnyObject
-    optional func collectionView(collectionView: UICollectionView, representationImageAtIndexPath indexPath: NSIndexPath) -> UIImage
+    @objc optional func collectionView(_ collectionView: UICollectionView, indexPathForDragInfo dragInfo: AnyObject) -> IndexPath?
+    func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject
+    @objc optional func collectionView(_ collectionView: UICollectionView, representationImageAtIndexPath indexPath: IndexPath) -> UIImage?
     
     
     //drag
-    func collectionView(collectionView: UICollectionView, touchBeginAtIndexPath indexPath:NSIndexPath) -> Void
-    func collectionView(collectionView: UICollectionView, canDragAtIndexPath indexPath: NSIndexPath) -> Bool
+    func collectionView(_ collectionView: UICollectionView, touchBeginAtIndexPath indexPath:IndexPath) -> Void
+    func collectionView(_ collectionView: UICollectionView, canDragAtIndexPath indexPath: IndexPath) -> Bool
 
-    func collectionView(collectionView: UICollectionView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: NSIndexPath,withDropInfo dropInfo:AnyObject) -> Void
-    func collectionViewStopDragging(collectionView: UICollectionView)->Void
+    func collectionView(_ collectionView: UICollectionView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath,withDropInfo dropInfo:AnyObject?) -> Void
+    func collectionViewStopDragging(_ collectionView: UICollectionView)->Void
     
     
     //drop
-    func collectionView(collectionView: UICollectionView, canDropWithDragInfo info:AnyObject, AtIndexPath indexPath: NSIndexPath) -> Bool
-    func collectionView(collectionView: UICollectionView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: NSIndexPath,withDropInfo dropInfo:AnyObject,atDropIndexPath dropIndexPath:NSIndexPath) -> Void
-    func collectionViewStopDropping(collectionView: UICollectionView)->Void
+    func collectionView(_ collectionView: UICollectionView, canDropWithDragInfo info:AnyObject, AtIndexPath indexPath: IndexPath) -> Bool
+    @objc optional func collectionView(_ collectionView: UICollectionView, dropOutsideWithDragInfo info:AnyObject) -> Void
+    func collectionView(_ collectionView: UICollectionView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?,atDropIndexPath dropIndexPath:IndexPath) -> Void
+    func collectionViewStopDropping(_ collectionView: UICollectionView)->Void
     
 }
 ```
 
 ## Author
 
-rafael zhou, wumingapie@gmail.com
+Rafael Zhou, wumingapie@gmail.com
 
 ## License
 
