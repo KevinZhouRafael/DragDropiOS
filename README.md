@@ -1,6 +1,6 @@
 # DragDropiOS
 
-[![CI Status](http://img.shields.io/travis/rafael zhou/DragDropiOS.svg?style=flat)](https://travis-ci.org/rafael zhou/DragDropiOS)
+
 [![Version](https://img.shields.io/cocoapods/v/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
 [![License](https://img.shields.io/cocoapods/l/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
 [![Platform](https://img.shields.io/cocoapods/p/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
@@ -28,12 +28,23 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+### Cocoapods
+
 DragDropiOS is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "DragDropiOS"
 ```
+### Carthage
+
+If you're using [Carthage](https://github.com/Carthage/Carthage), you can add a dependency on DragDropiOS by adding it to your Cartfile:
+
+```ruby
+github "KevinChouRafael/DragDropiOS"
+```
+
+
 ## Introduce
 
 ### Draggable

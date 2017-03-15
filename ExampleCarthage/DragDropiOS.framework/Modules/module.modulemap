@@ -1,0 +1,10 @@
+framework module DragDropiOS {
+  umbrella header "DragDropiOS.h"
+
+  export *
+  module * { export * }
+}
+
+module DragDropiOS.Swift {
+    header "DragDropiOS-Swift.h"
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DragDropiOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4u8-GW-Ms5" customClass="DragDropCollectionView" customModule="DragDropiOS">
+                                <rect key="frame" x="0.0" y="248" width="375" height="419"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G88-2m-PR0">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="COLLECTION_VIEW_CELL" id="t0F-1f-5WA" customClass="CollectionViewCell" customModule="DragDropiOS_Example" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-G3-dBm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Vdy-G3-dBm" secondAttribute="bottom" id="7KF-dN-aRr"/>
+                                            <constraint firstItem="Vdy-G3-dBm" firstAttribute="leading" secondItem="t0F-1f-5WA" secondAttribute="leading" id="Jaz-un-8GV"/>
+                                            <constraint firstItem="Vdy-G3-dBm" firstAttribute="top" secondItem="t0F-1f-5WA" secondAttribute="top" id="iWr-F4-LIc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vdy-G3-dBm" secondAttribute="trailing" id="iwI-m0-yYT"/>
+                                        </constraints>
+                                        <size key="customSize" width="90" height="90"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="Vdy-G3-dBm" id="BEX-jq-1I5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="14J-HS-Tps"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="sTD-Pj-nb1"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydN-lk-dp5" customClass="DragDropView" customModule="DragDropiOS_Example" customModuleProvider="target">
+                                <rect key="frame" x="8" y="28" width="360" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssp-VF-XCS">
+                                        <rect key="frame" x="8" y="21" width="344" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="o4k-ob-mOR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ssp-VF-XCS" secondAttribute="trailing" constant="8" id="2a1-Vf-0vp"/>
+                                    <constraint firstItem="ssp-VF-XCS" firstAttribute="leading" secondItem="ydN-lk-dp5" secondAttribute="leading" constant="8" id="8ex-p6-NKZ"/>
+                                    <constraint firstItem="ssp-VF-XCS" firstAttribute="centerY" secondItem="ydN-lk-dp5" secondAttribute="centerY" id="YEg-db-qAQ"/>
+                                    <constraint firstAttribute="height" constant="77" id="oEj-f5-XNr"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="label" destination="ssp-VF-XCS" id="fcJ-pz-wyp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGm-yD-3HN" customClass="DragDropView" customModule="DragDropiOS_Example" customModuleProvider="target">
+                                <rect key="frame" x="90" y="131" width="195" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtv-91-nvw">
+                                        <rect key="frame" x="8" y="29" width="179" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="3bX-Zj-W9v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="5Tv-TO-bhb"/>
+                                    <constraint firstItem="Dtv-91-nvw" firstAttribute="centerY" secondItem="oGm-yD-3HN" secondAttribute="centerY" id="J8a-1C-33s"/>
+                                    <constraint firstAttribute="height" constant="85" id="hmi-tl-Ex0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dtv-91-nvw" secondAttribute="trailing" constant="8" id="rZt-2O-pWp"/>
+                                    <constraint firstItem="Dtv-91-nvw" firstAttribute="leading" secondItem="oGm-yD-3HN" secondAttribute="leading" constant="8" id="w9q-3s-wR6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="label" destination="Dtv-91-nvw" id="lXF-4N-iDG"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4u8-GW-Ms5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="2jX-xQ-5A1"/>
+                            <constraint firstItem="oGm-yD-3HN" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="3X8-rc-mvt"/>
+                            <constraint firstItem="ydN-lk-dp5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="6x6-ga-e7y"/>
+                            <constraint firstItem="4u8-GW-Ms5" firstAttribute="top" secondItem="oGm-yD-3HN" secondAttribute="bottom" constant="32" id="8On-3w-ZtH"/>
+                            <constraint firstItem="oGm-yD-3HN" firstAttribute="top" secondItem="ydN-lk-dp5" secondAttribute="bottom" constant="26" id="A1e-nj-gUl"/>
+                            <constraint firstAttribute="trailing" secondItem="ydN-lk-dp5" secondAttribute="trailing" constant="7" id="Ajo-KF-4pc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4u8-GW-Ms5" secondAttribute="bottom" id="Cfm-Bi-Clx"/>
+                            <constraint firstAttribute="trailing" secondItem="4u8-GW-Ms5" secondAttribute="trailing" id="TsX-cc-0KY"/>
+                            <constraint firstItem="ydN-lk-dp5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="yti-jM-jOS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dragDropCollectionView" destination="4u8-GW-Ms5" id="wsP-MH-gcS"/>
+                        <outlet property="dragDropView1" destination="ydN-lk-dp5" id="So9-TC-8MR"/>
+                        <outlet property="dragDropView2" destination="oGm-yD-3HN" id="2Yr-Tq-4WG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279.19999999999999" y="336.88155922038982"/>
+        </scene>
+    </scenes>
+</document>
