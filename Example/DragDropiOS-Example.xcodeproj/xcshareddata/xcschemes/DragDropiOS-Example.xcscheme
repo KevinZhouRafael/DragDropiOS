@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "DragDropiOS_Example.app"
-               BlueprintName = "DragDropiOS_Example"
-               ReferencedContainer = "container:DragDropiOS.xcodeproj">
+               BuildableName = "DragDropiOS-Example.app"
+               BlueprintName = "DragDropiOS-Example"
+               ReferencedContainer = "container:DragDropiOS-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "DragDropiOS_Tests.xctest"
-               BlueprintName = "DragDropiOS_Tests"
-               ReferencedContainer = "container:DragDropiOS.xcodeproj">
+               BuildableName = "DragDropiOS-Example_Tests.xctest"
+               BlueprintName = "DragDropiOS-Example_Tests"
+               ReferencedContainer = "container:DragDropiOS-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "DragDropiOS_Tests.xctest"
-               BlueprintName = "DragDropiOS_Tests"
-               ReferencedContainer = "container:DragDropiOS.xcodeproj">
+               BuildableName = "DragDropiOS-Example_Tests.xctest"
+               BlueprintName = "DragDropiOS-Example_Tests"
+               ReferencedContainer = "container:DragDropiOS-Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "DragDropiOS_Example.app"
-            BlueprintName = "DragDropiOS_Example"
-            ReferencedContainer = "container:DragDropiOS.xcodeproj">
+            BuildableName = "DragDropiOS-Example.app"
+            BlueprintName = "DragDropiOS-Example"
+            ReferencedContainer = "container:DragDropiOS-Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "DragDropiOS_Example.app"
-            BlueprintName = "DragDropiOS_Example"
-            ReferencedContainer = "container:DragDropiOS.xcodeproj">
+            BuildableName = "DragDropiOS-Example.app"
+            BlueprintName = "DragDropiOS-Example"
+            ReferencedContainer = "container:DragDropiOS-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "DragDropiOS_Example.app"
-            BlueprintName = "DragDropiOS_Example"
-            ReferencedContainer = "container:DragDropiOS.xcodeproj">
+            BuildableName = "DragDropiOS-Example.app"
+            BlueprintName = "DragDropiOS-Example"
+            ReferencedContainer = "container:DragDropiOS-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,0 +1,16 @@
+PODS:
+  - DragDropiOS (0.1.2)
+
+DEPENDENCIES:
+  - DragDropiOS (from `../`)
+
+EXTERNAL SOURCES:
+  DragDropiOS:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DragDropiOS: 501e4d7ed221fefbf90563c0e0e7f403d7d0efb2
+
+PODFILE CHECKSUM: acb055b7d750e2099df728824376dd0af6c81c28
+
+COCOAPODS: 1.2.0

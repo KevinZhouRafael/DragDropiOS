@@ -10,7 +10,6 @@ import UIKit
 import DragDropiOS
 
 
-
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,DragDropCollectionViewDelegate {
     
     var models:[Model] = [Model]()

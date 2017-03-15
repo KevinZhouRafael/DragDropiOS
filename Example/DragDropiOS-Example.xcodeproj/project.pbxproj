@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0307AD32B9D4CA107FCF70A5 /* Pods_DragDropiOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DDBAB980579F0A11C088E1 /* Pods_DragDropiOS_Example.framework */; };
-		3AA3D41B3474E4A18DC0A55E /* Pods_DragDropiOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE996197F5CC10A1D974358 /* Pods_DragDropiOS_Tests.framework */; };
-		53BB8E001DBF692E0057DB94 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB8DFF1DBF692E0057DB94 /* CollectionViewCell.swift */; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		CFBA9C011E4B16610074FB95 /* DragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA9C001E4B16610074FB95 /* DragDropView.swift */; };
-		CFBA9C031E4B16810074FB95 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA9C021E4B16810074FB95 /* Model.swift */; };
+		611FDA837D207DD87D20D2F3 /* Pods_DragDropiOS_Example_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91DB933708F5A7762DF455A /* Pods_DragDropiOS_Example_Tests.framework */; };
+		B115EE7788FE7EE137E545CE /* Pods_DragDropiOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCB53A91349AFC78959B6CA /* Pods_DragDropiOS_Example.framework */; };
+		CF00545B1E79252F00D7EE97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054501E79252F00D7EE97 /* AppDelegate.swift */; };
+		CF00545C1E79252F00D7EE97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0054511E79252F00D7EE97 /* LaunchScreen.xib */; };
+		CF00545D1E79252F00D7EE97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0054531E79252F00D7EE97 /* Main.storyboard */; };
+		CF00545E1E79252F00D7EE97 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054551E79252F00D7EE97 /* CollectionViewCell.swift */; };
+		CF00545F1E79252F00D7EE97 /* DragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054561E79252F00D7EE97 /* DragDropView.swift */; };
+		CF0054601E79252F00D7EE97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0054571E79252F00D7EE97 /* Images.xcassets */; };
+		CF0054611E79252F00D7EE97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF0054581E79252F00D7EE97 /* Info.plist */; };
+		CF0054621E79252F00D7EE97 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054591E79252F00D7EE97 /* Model.swift */; };
+		CF0054631E79252F00D7EE97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00545A1E79252F00D7EE97 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,28 +32,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		391DA46AE9F18179A389E6C9 /* DragDropiOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DragDropiOS.podspec; path = ../DragDropiOS.podspec; sourceTree = "<group>"; };
-		3FA76EB543653C8AA00D2E25 /* Pods-DragDropiOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS_Example/Pods-DragDropiOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		53BB8DFF1DBF692E0057DB94 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* DragDropiOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragDropiOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* DragDropiOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragDropiOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DCB53A91349AFC78959B6CA /* Pods_DragDropiOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragDropiOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* DragDropiOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DragDropiOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* DragDropiOS-Example_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DragDropiOS-Example_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6FE7278EE92CC22DEE5DED6F /* Pods-DragDropiOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS_Tests/Pods-DragDropiOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		765D5B708C0C457AB1DEE3CB /* Pods-DragDropiOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS_Tests/Pods-DragDropiOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		78010CED37ACC8EE048C738C /* Pods-DragDropiOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS_Example/Pods-DragDropiOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		82DDBAB980579F0A11C088E1 /* Pods_DragDropiOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragDropiOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB0B04B284EEDB949D58F02D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		C5C1C9679D59097B282F27A3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CFBA9C001E4B16610074FB95 /* DragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropView.swift; sourceTree = "<group>"; };
-		CFBA9C021E4B16810074FB95 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		EAE996197F5CC10A1D974358 /* Pods_DragDropiOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragDropiOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812B5E784CB058135AA0CCAB /* Pods-DragDropiOS-Example_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example_Tests/Pods-DragDropiOS-Example_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B5B1C21819652F5B9D15F404 /* Pods-DragDropiOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example/Pods-DragDropiOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C8CA47DDC694824F4C3BA7D3 /* Pods-DragDropiOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example/Pods-DragDropiOS-Example.release.xcconfig"; sourceTree = "<group>"; };
+		CF0054501E79252F00D7EE97 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF0054521E79252F00D7EE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CF0054541E79252F00D7EE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF0054551E79252F00D7EE97 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		CF0054561E79252F00D7EE97 /* DragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropView.swift; sourceTree = "<group>"; };
+		CF0054571E79252F00D7EE97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CF0054581E79252F00D7EE97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF0054591E79252F00D7EE97 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CF00545A1E79252F00D7EE97 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5EDE482BCD4575D1E119F14 /* Pods-DragDropiOS-Example_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example_Tests/Pods-DragDropiOS-Example_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F91DB933708F5A7762DF455A /* Pods_DragDropiOS_Example_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragDropiOS_Example_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0307AD32B9D4CA107FCF70A5 /* Pods_DragDropiOS_Example.framework in Frameworks */,
+				B115EE7788FE7EE137E545CE /* Pods_DragDropiOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,68 +66,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AA3D41B3474E4A18DC0A55E /* Pods_DragDropiOS_Tests.framework in Frameworks */,
+				611FDA837D207DD87D20D2F3 /* Pods_DragDropiOS_Example_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47B1488C23F9E25F2326CC07 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3FA76EB543653C8AA00D2E25 /* Pods-DragDropiOS_Example.debug.xcconfig */,
-				78010CED37ACC8EE048C738C /* Pods-DragDropiOS_Example.release.xcconfig */,
-				765D5B708C0C457AB1DEE3CB /* Pods-DragDropiOS_Tests.debug.xcconfig */,
-				6FE7278EE92CC22DEE5DED6F /* Pods-DragDropiOS_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for DragDropiOS */,
+				CF00544F1E79252F00D7EE97 /* DragDropiOS-Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				47B1488C23F9E25F2326CC07 /* Pods */,
 				FD93339CC4E33B17CCF40856 /* Frameworks */,
+				7A46DFB362C55165D8EB462C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* DragDropiOS_Example.app */,
-				607FACE51AFB9204008FA782 /* DragDropiOS_Tests.xctest */,
+				607FACD01AFB9204008FA782 /* DragDropiOS-Example.app */,
+				607FACE51AFB9204008FA782 /* DragDropiOS-Example_Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		607FACD21AFB9204008FA782 /* Example for DragDropiOS */ = {
-			isa = PBXGroup;
-			children = (
-				CFBA9C001E4B16610074FB95 /* DragDropView.swift */,
-				53BB8DFF1DBF692E0057DB94 /* CollectionViewCell.swift */,
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
-				CFBA9C021E4B16810074FB95 /* Model.swift */,
-			);
-			name = "Example for DragDropiOS";
-			path = DragDropiOS;
-			sourceTree = "<group>";
-		};
-		607FACD31AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
@@ -149,21 +110,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+		7A46DFB362C55165D8EB462C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				391DA46AE9F18179A389E6C9 /* DragDropiOS.podspec */,
-				C5C1C9679D59097B282F27A3 /* README.md */,
-				BB0B04B284EEDB949D58F02D /* LICENSE */,
+				B5B1C21819652F5B9D15F404 /* Pods-DragDropiOS-Example.debug.xcconfig */,
+				C8CA47DDC694824F4C3BA7D3 /* Pods-DragDropiOS-Example.release.xcconfig */,
+				D5EDE482BCD4575D1E119F14 /* Pods-DragDropiOS-Example_Tests.debug.xcconfig */,
+				812B5E784CB058135AA0CCAB /* Pods-DragDropiOS-Example_Tests.release.xcconfig */,
 			);
-			name = "Podspec Metadata";
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF00544F1E79252F00D7EE97 /* DragDropiOS-Example */ = {
+			isa = PBXGroup;
+			children = (
+				CF0054501E79252F00D7EE97 /* AppDelegate.swift */,
+				CF0054511E79252F00D7EE97 /* LaunchScreen.xib */,
+				CF0054531E79252F00D7EE97 /* Main.storyboard */,
+				CF0054551E79252F00D7EE97 /* CollectionViewCell.swift */,
+				CF0054561E79252F00D7EE97 /* DragDropView.swift */,
+				CF0054571E79252F00D7EE97 /* Images.xcassets */,
+				CF0054581E79252F00D7EE97 /* Info.plist */,
+				CF0054591E79252F00D7EE97 /* Model.swift */,
+				CF00545A1E79252F00D7EE97 /* ViewController.swift */,
+			);
+			path = "DragDropiOS-Example";
 			sourceTree = "<group>";
 		};
 		FD93339CC4E33B17CCF40856 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82DDBAB980579F0A11C088E1 /* Pods_DragDropiOS_Example.framework */,
-				EAE996197F5CC10A1D974358 /* Pods_DragDropiOS_Tests.framework */,
+				5DCB53A91349AFC78959B6CA /* Pods_DragDropiOS_Example.framework */,
+				F91DB933708F5A7762DF455A /* Pods_DragDropiOS_Example_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* DragDropiOS_Example */ = {
+		607FACCF1AFB9204008FA782 /* DragDropiOS-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS-Example" */;
 			buildPhases = (
 				5A492194315381216E7FAC91 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
@@ -186,14 +164,14 @@
 			);
 			dependencies = (
 			);
-			name = DragDropiOS_Example;
+			name = "DragDropiOS-Example";
 			productName = DragDropiOS;
-			productReference = 607FACD01AFB9204008FA782 /* DragDropiOS_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* DragDropiOS-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* DragDropiOS_Tests */ = {
+		607FACE41AFB9204008FA782 /* DragDropiOS-Example_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS_Tests" */;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS-Example_Tests" */;
 			buildPhases = (
 				FBB9A52BED19F5738B6E2BAB /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
@@ -207,9 +185,9 @@
 			dependencies = (
 				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
 			);
-			name = DragDropiOS_Tests;
+			name = "DragDropiOS-Example_Tests";
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* DragDropiOS_Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* DragDropiOS-Example_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -237,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "DragDropiOS" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "DragDropiOS-Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -250,8 +228,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* DragDropiOS_Example */,
-				607FACE41AFB9204008FA782 /* DragDropiOS_Tests */,
+				607FACCF1AFB9204008FA782 /* DragDropiOS-Example */,
+				607FACE41AFB9204008FA782 /* DragDropiOS-Example_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,9 +239,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				CF0054611E79252F00D7EE97 /* Info.plist in Resources */,
+				CF0054601E79252F00D7EE97 /* Images.xcassets in Resources */,
+				CF00545C1E79252F00D7EE97 /* LaunchScreen.xib in Resources */,
+				CF00545D1E79252F00D7EE97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +268,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS_Example/Pods-DragDropiOS_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS-Example/Pods-DragDropiOS-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A492194315381216E7FAC91 /* [CP] Check Pods Manifest.lock */ = {
@@ -304,7 +283,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8A4EFB9BD20A990AC342A78E /* [CP] Embed Pods Frameworks */ = {
@@ -319,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS_Tests/Pods-DragDropiOS_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS-Example_Tests/Pods-DragDropiOS-Example_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9DC5E064FF0A44F0241E4E59 /* [CP] Copy Pods Resources */ = {
@@ -334,7 +313,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS_Example/Pods-DragDropiOS_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS-Example/Pods-DragDropiOS-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E6CD0921732F3CA17FF41C7 /* [CP] Copy Pods Resources */ = {
@@ -349,7 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS_Tests/Pods-DragDropiOS_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragDropiOS-Example_Tests/Pods-DragDropiOS-Example_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBB9A52BED19F5738B6E2BAB /* [CP] Check Pods Manifest.lock */ = {
@@ -364,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -374,11 +353,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBA9C031E4B16810074FB95 /* Model.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				53BB8E001DBF692E0057DB94 /* CollectionViewCell.swift in Sources */,
-				CFBA9C011E4B16610074FB95 /* DragDropView.swift in Sources */,
+				CF0054631E79252F00D7EE97 /* ViewController.swift in Sources */,
+				CF00545E1E79252F00D7EE97 /* CollectionViewCell.swift in Sources */,
+				CF00545F1E79252F00D7EE97 /* DragDropView.swift in Sources */,
+				CF00545B1E79252F00D7EE97 /* AppDelegate.swift in Sources */,
+				CF0054621E79252F00D7EE97 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,26 +374,26 @@
 /* Begin PBXTargetDependency section */
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* DragDropiOS_Example */;
+			target = 607FACCF1AFB9204008FA782 /* DragDropiOS-Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+		CF0054511E79252F00D7EE97 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
+				CF0054521E79252F00D7EE97 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		CF0054531E79252F00D7EE97 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF0054541E79252F00D7EE97 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -509,33 +488,35 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FA76EB543653C8AA00D2E25 /* Pods-DragDropiOS_Example.debug.xcconfig */;
+			baseConfigurationReference = B5B1C21819652F5B9D15F404 /* Pods-DragDropiOS-Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NV79J62JR;
-				INFOPLIST_FILE = DragDropiOS/Info.plist;
+				INFOPLIST_FILE = "DragDropiOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheer.DragDropiOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78010CED37ACC8EE048C738C /* Pods-DragDropiOS_Example.release.xcconfig */;
+			baseConfigurationReference = C8CA47DDC694824F4C3BA7D3 /* Pods-DragDropiOS-Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NV79J62JR;
-				INFOPLIST_FILE = DragDropiOS/Info.plist;
+				INFOPLIST_FILE = "DragDropiOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheer.DragDropiOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -543,8 +524,9 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 765D5B708C0C457AB1DEE3CB /* Pods-DragDropiOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = D5EDE482BCD4575D1E119F14 /* Pods-DragDropiOS-Example_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NV79J62JR;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -565,8 +547,9 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FE7278EE92CC22DEE5DED6F /* Pods-DragDropiOS_Tests.release.xcconfig */;
+			baseConfigurationReference = 812B5E784CB058135AA0CCAB /* Pods-DragDropiOS-Example_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NV79J62JR;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -584,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "DragDropiOS" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "DragDropiOS-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -593,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
@@ -602,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS_Tests" */ = {
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS-Example_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
