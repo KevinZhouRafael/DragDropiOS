@@ -17,7 +17,7 @@ The example shows a drag and drop demo between UICollectionView and UIViews.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-![Simple image](https://raw.githubusercontent.com/KevinChouRafael/DragDropiOS/master/dragdropdemo.gif)
+![Simple image](https://raw.githubusercontent.com/KevinZhouRafael/DragDropiOS/master/dragdropdemo.gif)
 
 
 ## Requirements
@@ -41,7 +41,7 @@ pod "DragDropiOS"
 If you're using [Carthage](https://github.com/Carthage/Carthage), you can add a dependency on DragDropiOS by adding it to your Cartfile:
 
 ```ruby
-github "KevinChouRafael/DragDropiOS"
+github "KevinZhouRafael/DragDropiOS"
 ```
 
 
