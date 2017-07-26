@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 DragDropiOS is a drag and drop manager on iOS.The library supports drag and drop with in one or more classes extends UIView.
                        DESC
 
-  s.homepage         = 'https://github.com/KevinChouRafael/DragDropiOS'
+  s.homepage         = 'https://github.com/KevinZhouRafael/DragDropiOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'rafael zhou' => 'wumingapie@gmail.com' }
-  s.source           = { :git => 'https://github.com/KevinChouRafael/DragDropiOS.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/KevinZhouRafael/DragDropiOS.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
