@@ -2,18 +2,19 @@
 
 
 [![Version](https://img.shields.io/cocoapods/v/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/ActiveSQLite)
 [![License](https://img.shields.io/cocoapods/l/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
 [![Platform](https://img.shields.io/cocoapods/p/DragDropiOS.svg?style=flat)](http://cocoapods.org/pods/DragDropiOS)
 
 DragDropiOS is a drag and drop manager on iOS. 
 It supports drag and drop with in one or more classes extends UIView.
-This library contains a UICollectionView implenment of drag and drop manager.
+This library contains  UICollectionView and UITableView that implenment of drag and drop manager.
 
 
 
 ## Example
 
-The example shows a drag and drop demo between UICollectionView and UIViews.
+The example shows a drag and drop demo betweens UICollectionView, UITableView and UIView.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
@@ -69,16 +70,35 @@ github "KevinZhouRafael/DragDropiOS"
     func canDropWithDragInfo(_ dragInfo:AnyObject, inRect rect : CGRect) -> Bool
     func dropOverInfoInRect(_ rect:CGRect) -> AnyObject?
     @objc optional func dropOutside(_ dragInfo:AnyObject, inRect rect:CGRect)->Void
-    
-    @objc optional func willMoveItem(_ item : AnyObject, inRect rect : CGRect) -> Void
-    @objc optional func didMoveItem(_ item : AnyObject, inRect rect : CGRect) -> Void
-    @objc optional func didMoveOutItem(_ item : AnyObject) -> Void
-    
     func dropComplete(_ dragInfo : AnyObject,dropInfo:AnyObject?, atRect : CGRect) -> Void
-    
     @objc optional func checkFroEdgesAndScroll(_ item : AnyObject, inRect rect : CGRect) -> Void
-    
     @objc optional func stopDropping() -> Void
+}
+```
+### DragDropTableView and DragDropTableViewDelegate
+
+```swift
+@objc public protocol DragDropTableViewDelegate : NSObjectProtocol {
+    
+    @objc optional func tableView(_ tableView: UITableView, indexPathForDragInfo dragInfo: AnyObject) -> IndexPath?
+    func tableView(_ tableView: UITableView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject
+    @objc optional func tableView(_ tableView: UITableView, representationImageAtIndexPath indexPath: IndexPath) -> UIImage?
+    
+    
+    //drag
+    func tableView(_ tableView: UITableView, touchBeginAtIndexPath indexPath:IndexPath) -> Void
+    func tableView(_ tableView: UITableView, canDragAtIndexPath indexPath: IndexPath) -> Bool
+    
+    func tableView(_ tableView: UITableView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath,withDropInfo dropInfo:AnyObject?) -> Void
+    func tableViewStopDragging(_ tableView: UITableView)->Void
+    
+    
+    //drop
+    func tableView(_ tableView: UITableView, canDropWithDragInfo info:AnyObject, AtIndexPath indexPath: IndexPath) -> Bool
+    @objc optional func tableView(_ tableView: UITableView, dropOutsideWithDragInfo info:AnyObject) -> Void
+    func tableView(_ tableView: UITableView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?,atDropIndexPath dropIndexPath:IndexPath) -> Void
+    func tableViewStopDropping(_ tableView: UITableView)->Void
+    
 }
 ```
 

@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		569B78CF1F2F326000AC8424 /* DragDropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B78CE1F2F326000AC8424 /* DragDropTableView.swift */; };
 		CF00543F1E79221D00D7EE97 /* DragDropiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CF00543D1E79221D00D7EE97 /* DragDropiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF00544D1E7924B600D7EE97 /* DragDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00544B1E7924B600D7EE97 /* DragDropCollectionView.swift */; };
 		CF00544E1E7924B600D7EE97 /* DragDropManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00544C1E7924B600D7EE97 /* DragDropManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		569B78CE1F2F326000AC8424 /* DragDropTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropTableView.swift; sourceTree = "<group>"; };
 		CF00543A1E79221D00D7EE97 /* DragDropiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DragDropiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF00543D1E79221D00D7EE97 /* DragDropiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropiOS.h; sourceTree = "<group>"; };
 		CF00543E1E79221D00D7EE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,8 +62,9 @@
 		CF00544A1E7924B600D7EE97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CF00544B1E7924B600D7EE97 /* DragDropCollectionView.swift */,
 				CF00544C1E7924B600D7EE97 /* DragDropManager.swift */,
+				CF00544B1E7924B600D7EE97 /* DragDropCollectionView.swift */,
+				569B78CE1F2F326000AC8424 /* DragDropTableView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				CF00544E1E7924B600D7EE97 /* DragDropManager.swift in Sources */,
 				CF00544D1E7924B600D7EE97 /* DragDropCollectionView.swift in Sources */,
+				569B78CF1F2F326000AC8424 /* DragDropTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

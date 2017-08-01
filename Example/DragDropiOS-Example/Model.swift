@@ -8,7 +8,19 @@
 
 import Foundation
 class Model {
-    var index:Int!
-    var text:String?
+    var collectionIndex:Int? //not use now
+    var tableIndex:Int? //not use now
+    var fruit:Fruit?
+}
+
+
+class Fruit {
+    var id:Int!
+    var name:String?
     var imageName:String?
+    init(id:Int,name:String,imageName:String) {
+        self.id = id
+        self.name = name
+        self.imageName = imageName
+    }
 }

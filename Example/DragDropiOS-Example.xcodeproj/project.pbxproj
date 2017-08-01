@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		569B78D71F2F3D3A00AC8424 /* ViewController+DragDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B78D61F2F3D3A00AC8424 /* ViewController+DragDropCollectionView.swift */; };
+		569B78D91F3019CB00AC8424 /* ViewController+DragDropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B78D81F3019CB00AC8424 /* ViewController+DragDropTableView.swift */; };
+		569B78DB1F301AD600AC8424 /* DragDropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B78DA1F301AD600AC8424 /* DragDropTableViewCell.swift */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		611FDA837D207DD87D20D2F3 /* Pods_DragDropiOS_Example_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91DB933708F5A7762DF455A /* Pods_DragDropiOS_Example_Tests.framework */; };
 		B115EE7788FE7EE137E545CE /* Pods_DragDropiOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCB53A91349AFC78959B6CA /* Pods_DragDropiOS_Example.framework */; };
 		CF00545B1E79252F00D7EE97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054501E79252F00D7EE97 /* AppDelegate.swift */; };
 		CF00545C1E79252F00D7EE97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0054511E79252F00D7EE97 /* LaunchScreen.xib */; };
 		CF00545D1E79252F00D7EE97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0054531E79252F00D7EE97 /* Main.storyboard */; };
-		CF00545E1E79252F00D7EE97 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054551E79252F00D7EE97 /* CollectionViewCell.swift */; };
+		CF00545E1E79252F00D7EE97 /* DragDropCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054551E79252F00D7EE97 /* DragDropCollectionViewCell.swift */; };
 		CF00545F1E79252F00D7EE97 /* DragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054561E79252F00D7EE97 /* DragDropView.swift */; };
 		CF0054601E79252F00D7EE97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0054571E79252F00D7EE97 /* Images.xcassets */; };
 		CF0054611E79252F00D7EE97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF0054581E79252F00D7EE97 /* Info.plist */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		569B78D61F2F3D3A00AC8424 /* ViewController+DragDropCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+DragDropCollectionView.swift"; sourceTree = "<group>"; };
+		569B78D81F3019CB00AC8424 /* ViewController+DragDropTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+DragDropTableView.swift"; sourceTree = "<group>"; };
+		569B78DA1F301AD600AC8424 /* DragDropTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropTableViewCell.swift; sourceTree = "<group>"; };
 		5DCB53A91349AFC78959B6CA /* Pods_DragDropiOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragDropiOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* DragDropiOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DragDropiOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACE51AFB9204008FA782 /* DragDropiOS-Example_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DragDropiOS-Example_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +49,7 @@
 		CF0054501E79252F00D7EE97 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF0054521E79252F00D7EE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CF0054541E79252F00D7EE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF0054551E79252F00D7EE97 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		CF0054551E79252F00D7EE97 /* DragDropCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF0054561E79252F00D7EE97 /* DragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDropView.swift; sourceTree = "<group>"; };
 		CF0054571E79252F00D7EE97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF0054581E79252F00D7EE97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,12 +133,15 @@
 				CF0054501E79252F00D7EE97 /* AppDelegate.swift */,
 				CF0054511E79252F00D7EE97 /* LaunchScreen.xib */,
 				CF0054531E79252F00D7EE97 /* Main.storyboard */,
-				CF0054551E79252F00D7EE97 /* CollectionViewCell.swift */,
 				CF0054561E79252F00D7EE97 /* DragDropView.swift */,
 				CF0054571E79252F00D7EE97 /* Images.xcassets */,
 				CF0054581E79252F00D7EE97 /* Info.plist */,
 				CF0054591E79252F00D7EE97 /* Model.swift */,
 				CF00545A1E79252F00D7EE97 /* ViewController.swift */,
+				569B78D61F2F3D3A00AC8424 /* ViewController+DragDropCollectionView.swift */,
+				CF0054551E79252F00D7EE97 /* DragDropCollectionViewCell.swift */,
+				569B78D81F3019CB00AC8424 /* ViewController+DragDropTableView.swift */,
+				569B78DA1F301AD600AC8424 /* DragDropTableViewCell.swift */,
 			);
 			path = "DragDropiOS-Example";
 			sourceTree = "<group>";
@@ -283,7 +292,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8A4EFB9BD20A990AC342A78E /* [CP] Embed Pods Frameworks */ = {
@@ -343,7 +352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -354,10 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF0054631E79252F00D7EE97 /* ViewController.swift in Sources */,
-				CF00545E1E79252F00D7EE97 /* CollectionViewCell.swift in Sources */,
+				CF00545E1E79252F00D7EE97 /* DragDropCollectionViewCell.swift in Sources */,
 				CF00545F1E79252F00D7EE97 /* DragDropView.swift in Sources */,
 				CF00545B1E79252F00D7EE97 /* AppDelegate.swift in Sources */,
+				569B78DB1F301AD600AC8424 /* DragDropTableViewCell.swift in Sources */,
+				569B78D71F2F3D3A00AC8424 /* ViewController+DragDropCollectionView.swift in Sources */,
 				CF0054621E79252F00D7EE97 /* Model.swift in Sources */,
+				569B78D91F3019CB00AC8424 /* ViewController+DragDropTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
