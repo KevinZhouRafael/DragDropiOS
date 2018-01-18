@@ -104,6 +104,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @objc func timerHandler(timer:Timer) {
         print("timer-> \(timer.isValid)")
         
+        //1、Cancel dragging
+        DragDropiOS.cancelDragging()
+        
+        //2、Change models
         let randomGen = createRandomMan(start: 0, end: 15)
         
         var furits = [Fruit]()
@@ -125,7 +129,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             collectionModels.append(model)
         }
 
-        DragDropiOS.cancelDragging()
+        //3、Reload data
         dragDropCollectionView.reloadData()
     }
     
