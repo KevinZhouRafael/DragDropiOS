@@ -36,14 +36,14 @@ extension ViewController{
     
     func collectionView(_ collectionView: UICollectionView, canDragAtIndexPath indexPath: IndexPath) -> Bool {
         
-        return models[indexPath.item].fruit != nil
+        return collectionModels[indexPath.item].fruit != nil
         
     }
     func collectionView(_ collectionView: UICollectionView, dragInfoForIndexPath indexPath: IndexPath) -> AnyObject {
         
         let dragInfo = Model()
         dragInfo.collectionIndex = indexPath.item
-        dragInfo.fruit = models[indexPath.item].fruit
+        dragInfo.fruit = collectionModels[indexPath.item].fruit
         
         return dragInfo
     }
@@ -54,7 +54,7 @@ extension ViewController{
     func collectionView(_ collectionView: UICollectionView, canDropWithDragInfo dataItem: AnyObject, AtIndexPath indexPath: IndexPath) -> Bool {
         let dragInfo = dataItem as! Model
         
-        let overInfo = models[indexPath.item]
+        let overInfo = collectionModels[indexPath.item]
         
         debugPrint("move over index: \(indexPath.item)")
         
@@ -94,14 +94,14 @@ extension ViewController{
     func collectionView(_ collectionView: UICollectionView, dragCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath,withDropInfo dropInfo:AnyObject?) -> Void{
         if (dropInfo != nil){
             
-            models[dragIndexPath.item].fruit = (dropInfo as! Model).fruit
+            collectionModels[dragIndexPath.item].fruit = (dropInfo as! Model).fruit
         }else{
-            models[dragIndexPath.item].fruit = nil
+            collectionModels[dragIndexPath.item].fruit = nil
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, dropCompleteWithDragInfo dragInfo:AnyObject, atDragIndexPath dragIndexPath: IndexPath?,withDropInfo dropInfo:AnyObject?,atDropIndexPath dropIndexPath:IndexPath) -> Void{
-        models[dropIndexPath.item].fruit = (dragInfo as! Model).fruit
+        collectionModels[dropIndexPath.item].fruit = (dragInfo as! Model).fruit
         
     }
     

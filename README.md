@@ -25,7 +25,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 - iOS 8.0+  
 - Xcode 7.3
-- Swift 3.0
+- Swift 4.0
 
 ## Installation
 
@@ -127,6 +127,18 @@ github "KevinZhouRafael/DragDropiOS"
     
 }
 ```
+
+### Useage
+- Just let the view implement the Dragable Interface, the view can drag from.
+If the view implement the Dropable Interface, the view can drop in.
+
+- If you want drag or drop cells with UITableView. please create child class of DragDropTableView, and implenment DragDropTableViewDelegate delegate.
+
+- If you want drag or drop cells with UICollectionView, please create child class of DragDropCollectionView, and implenment DragDropCollectionViewDelegate delegate.
+
+- Before tableView or collectionView reloadData. you should cancel dragging process, please use DragDropiOS.cancelDragging().
+
+
 
 ## Author
 

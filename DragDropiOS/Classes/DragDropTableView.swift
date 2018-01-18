@@ -102,7 +102,7 @@ import UIKit
     }
     
     
-    func handlerDisplayLinkToContinuousScroll(){
+    @objc func handlerDisplayLinkToContinuousScroll(){
         if dragRectCurrent == nil {
             return
         }

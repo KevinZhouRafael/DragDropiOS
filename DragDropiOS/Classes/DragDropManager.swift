@@ -38,6 +38,7 @@ import UIKit
 }
 
 
+let DragDropiOS_Noti_Cancel_Dragging = "NOTIFICATION_CANCEL_DRAGGING"
 open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     
     var canvas : UIView = UIView()
@@ -68,6 +69,12 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
         
         self.canvas.addGestureRecognizer(self.longPressGestureRecogniser)
         self.views = views
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(cancelDragHandler), name: NSNotification.Name(rawValue: DragDropiOS_Noti_Cancel_Dragging), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
      open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -125,7 +132,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     
     
     
-     open func updateForLongPress(_ recognizer : UILongPressGestureRecognizer) -> Void {
+    @objc open func updateForLongPress(_ recognizer : UILongPressGestureRecognizer) -> Void {
         
         if var bundle = self.bundle {
             
@@ -259,7 +266,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                 
 //                if bundle.sourceDraggableView != bundle.overDroppableView { // if we are actually dropping over a new view.
                 
-                    print("\(bundle.overDroppableView?.tag)")
+                print("\(String(describing: bundle.overDroppableView?.tag))")
                     
                     if let droppable = bundle.overDroppableView as? Droppable {
                         
@@ -273,6 +280,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                             sourceDraggable.dragComplete(bundle.dragInfo,dropInfo: bundle.dropInfo)
                             droppable.dropComplete(bundle.dragInfo,dropInfo: bundle.dragInfo, atRect: rect)
                             
+                            sourceDraggable.stopDragging?()
                             droppable.stopDropping?()
                             
                         }else{
@@ -323,5 +331,24 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
         return r
     }
    
+    @objc private func cancelDragHandler() {
+        cancelDragProcess()
+    }
+    private func cancelDragProcess(){
+        if let bundle = self.bundle {
+            bundle.representationImageView.removeFromSuperview()
+            
+            if let dragable = bundle.sourceDraggableView as? Draggable {
+                dragable.stopDragging?()
+            }
+            
+            if let droppable = bundle.overDroppableView as? Droppable {
+                droppable.stopDropping?()
+            }
+
+            self.bundle = nil
+        }
+       
+    }
 }
  

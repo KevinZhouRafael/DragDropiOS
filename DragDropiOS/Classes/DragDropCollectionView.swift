@@ -36,8 +36,10 @@ import UIKit
 
 @objc open class DragDropCollectionView: UICollectionView, Draggable, Droppable {
 
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+//        addObserver(self, forKeyPath: "contentSize", options: .old, context: nil)
     }
     
     fileprivate var draggingPathOfCellBeingDragged : IndexPath?
@@ -50,9 +52,12 @@ import UIKit
     
     override public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-    
+//        addObserver(self, forKeyPath: "contentSize", options: .old, context: nil)
     }
     
+    deinit {
+//        removeObserver(self, forKeyPath: "contentSize")
+    }
 
     // MARK : Droppable
     func indexPathForCellOverlappingRect( _ rect : CGRect) -> IndexPath? {
@@ -113,7 +118,7 @@ import UIKit
     }
     
     
-    func handlerDisplayLinkToContinuousScroll(){
+    @objc func handlerDisplayLinkToContinuousScroll(){
         if dragRectCurrent == nil {
             return
         }
@@ -354,5 +359,12 @@ extension DragDropCollectionView{
         
     }
     
+    
+//    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        if keyPath != nil && keyPath! == "contentSize" {
+//            print("observe")
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: DragDropManager.NOTIFICATION_CANCEL_DRAGGING), object: nil)
+//        }
+//    }
 
 }
