@@ -136,7 +136,7 @@ If the view implement the Dropable Interface, the view can drop in.
 
 - If you want drag or drop cells with UICollectionView, please create child class of DragDropCollectionView, and implenment DragDropCollectionViewDelegate delegate.
 
-- Before tableView or collectionView reloadData. you should cancel dragging process, please use DragDropiOS.cancelDragging().
+- Before tableView or collectionView reloadData. you should cancel dragging process, please use DragDropiOS.cancelDragging(). The example support reloaddata every 5s, please use startTimer() method in Example.
 
 
 

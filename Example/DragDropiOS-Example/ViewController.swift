@@ -75,8 +75,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func startTimer(){
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerHandler(timer:)), userInfo: nil, repeats: true)
-            
+            timer = Timer(timeInterval: 5, target: self, selector: #selector(timerHandler(timer:)), userInfo: nil, repeats: true)
+            RunLoop.current.add(timer, forMode: .commonModes)
         }
     }
     
@@ -104,7 +104,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     @objc func timerHandler(timer:Timer) {
         print("timer-> \(timer.isValid)")
         
-        //1、Cancel dragging
+        //1、Cancel dragging progressing
         DragDropiOS.cancelDragging()
         
         //2、Change models
