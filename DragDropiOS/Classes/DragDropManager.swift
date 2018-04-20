@@ -45,6 +45,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     var views : [UIView] = []
     var longPressGestureRecogniser = UILongPressGestureRecognizer()
     
+
     
     struct Bundle {
         var offset : CGPoint = CGPoint.zero
@@ -56,6 +57,9 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     }
     var bundle : Bundle?
     
+    func isDragging() -> Bool{
+        return bundle != nil
+    }
     
     public init(canvas : UIView, views : [UIView]) {
         
@@ -78,6 +82,9 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     }
     
      open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        guard isDragging() == false else {
+            return false
+        }
         
         for view in self.views.filter({ v -> Bool in v is Draggable})  {
             
@@ -292,6 +299,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                 
                 
                 bundle.representationImageView.removeFromSuperview()
+                self.bundle = nil
                 sourceDraggable.stopDragging?()
                 
             default:
