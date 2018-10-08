@@ -92,7 +92,7 @@ import UIKit
         }
         
         displayLink = CADisplayLink(target: self, selector: #selector(DragDropTableView.handlerDisplayLinkToContinuousScroll))
-        displayLink!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        displayLink!.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
     }
     
     fileprivate func invalidateDisplayLink() {

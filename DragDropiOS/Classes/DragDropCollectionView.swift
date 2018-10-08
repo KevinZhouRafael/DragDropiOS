@@ -99,7 +99,7 @@ import UIKit
     //scroll relate
     fileprivate var displayLink: CADisplayLink?
     internal var scrollSpeedValue: CGFloat = 10.0
-    var scrollDirection:UICollectionViewScrollDirection = .vertical
+    var scrollDirection:UICollectionView.ScrollDirection = .vertical
     fileprivate var dragRectCurrent:CGRect!
     
     fileprivate func startDisplayLink() {
@@ -108,7 +108,7 @@ import UIKit
         }
         
         displayLink = CADisplayLink(target: self, selector: #selector(DragDropCollectionView.handlerDisplayLinkToContinuousScroll))
-        displayLink!.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        displayLink!.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
     }
     
     fileprivate func invalidateDisplayLink() {

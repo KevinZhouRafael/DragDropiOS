@@ -76,7 +76,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func startTimer(){
         if timer == nil {
             timer = Timer(timeInterval: 5, target: self, selector: #selector(timerHandler(timer:)), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: .commonModes)
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         }
     }
     
