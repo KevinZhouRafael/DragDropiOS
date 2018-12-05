@@ -56,10 +56,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
         var dropInfo : AnyObject?
     }
     var bundle : Bundle?
-    
-    func isDragging() -> Bool{
-        return bundle != nil
-    }
+    var isDragging:Bool = false
     
     public init(canvas : UIView, views : [UIView]) {
         
@@ -82,10 +79,12 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     }
     
      open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard isDragging() == false else {
+        debugPrint("gestureRecognizer shouldReceive")
+        guard isDragging == false else {
             return false
         }
         
+        debugPrint("will inter filter")
         for view in self.views.filter({ v -> Bool in v is Draggable})  {
             
             debugPrint("view：%@, ",view)
@@ -96,6 +95,8 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
             
             if view.bounds.contains(touchPointInView) {
                 if draggable.canDragAtPoint(touchPointInView) == true {
+                    
+                    debugPrint("can drag at point")
                     
                     if let representation = draggable.representationImageAtPoint(touchPointInView) {
                         
@@ -109,6 +110,8 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                         
                         
                         if let dataItem : AnyObject = draggable.dragInfoAtPoint(touchPointInView) {
+                            
+                             debugPrint("init drag into")
                             
                             self.bundle = Bundle(
                                 offset: offset,
@@ -132,6 +135,9 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
  
         } // for view in self.views.fil...
         
+        debugPrint("bundle set nil")
+        self.bundle = nil
+        self.isDragging = false
         return false
         
     }
@@ -141,6 +147,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
     
     @objc open func updateForLongPress(_ recognizer : UILongPressGestureRecognizer) -> Void {
         
+        debugPrint("updateForLongPress")
         if var bundle = self.bundle {
             
             let pointOnCanvas = recognizer.location(in: recognizer.view)
@@ -151,6 +158,8 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                 
                 
             case .began :
+                debugPrint("updateForLongPress——began")
+                
                 self.canvas.addSubview(bundle.representationImageView)
                 sourceDraggable.touchBeginAtPoint?(pointOnSourceDraggable)
                 
@@ -300,9 +309,11 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                 
                 bundle.representationImageView.removeFromSuperview()
                 self.bundle = nil
+                self.isDragging = false
                 sourceDraggable.stopDragging?()
                 
             default:
+                debugPrint("recognizer.state:\(recognizer.state)")
                 break
                 
             }
@@ -355,6 +366,7 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
             }
 
             self.bundle = nil
+            self.isDragging = false
         }
        
     }

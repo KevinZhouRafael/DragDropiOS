@@ -11,7 +11,6 @@
 		569B78D91F3019CB00AC8424 /* ViewController+DragDropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B78D81F3019CB00AC8424 /* ViewController+DragDropTableView.swift */; };
 		569B78DB1F301AD600AC8424 /* DragDropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B78DA1F301AD600AC8424 /* DragDropTableViewCell.swift */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		611FDA837D207DD87D20D2F3 /* Pods_DragDropiOS_Example_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91DB933708F5A7762DF455A /* Pods_DragDropiOS_Example_Tests.framework */; };
 		B115EE7788FE7EE137E545CE /* Pods_DragDropiOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCB53A91349AFC78959B6CA /* Pods_DragDropiOS_Example.framework */; };
 		CF00545B1E79252F00D7EE97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0054501E79252F00D7EE97 /* AppDelegate.swift */; };
 		CF00545C1E79252F00D7EE97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0054511E79252F00D7EE97 /* LaunchScreen.xib */; };
@@ -42,7 +41,6 @@
 		607FACE51AFB9204008FA782 /* DragDropiOS-Example_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DragDropiOS-Example_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		812B5E784CB058135AA0CCAB /* Pods-DragDropiOS-Example_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example_Tests/Pods-DragDropiOS-Example_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B5B1C21819652F5B9D15F404 /* Pods-DragDropiOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example/Pods-DragDropiOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C8CA47DDC694824F4C3BA7D3 /* Pods-DragDropiOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example/Pods-DragDropiOS-Example.release.xcconfig"; sourceTree = "<group>"; };
 		CF0054501E79252F00D7EE97 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +52,6 @@
 		CF0054581E79252F00D7EE97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF0054591E79252F00D7EE97 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CF00545A1E79252F00D7EE97 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D5EDE482BCD4575D1E119F14 /* Pods-DragDropiOS-Example_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragDropiOS-Example_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragDropiOS-Example_Tests/Pods-DragDropiOS-Example_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F91DB933708F5A7762DF455A /* Pods_DragDropiOS_Example_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragDropiOS_Example_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				611FDA837D207DD87D20D2F3 /* Pods_DragDropiOS_Example_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +116,6 @@
 			children = (
 				B5B1C21819652F5B9D15F404 /* Pods-DragDropiOS-Example.debug.xcconfig */,
 				C8CA47DDC694824F4C3BA7D3 /* Pods-DragDropiOS-Example.release.xcconfig */,
-				D5EDE482BCD4575D1E119F14 /* Pods-DragDropiOS-Example_Tests.debug.xcconfig */,
-				812B5E784CB058135AA0CCAB /* Pods-DragDropiOS-Example_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -165,7 +159,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				53CD5472F353C613ECDCF3D3 /* [CP] Embed Pods Frameworks */,
+				1D672404CB792B5AEE2D6704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,7 +174,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DragDropiOS-Example_Tests" */;
 			buildPhases = (
-				FBB9A52BED19F5738B6E2BAB /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -260,7 +253,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53CD5472F353C613ECDCF3D3 /* [CP] Embed Pods Frameworks */ = {
+		1D672404CB792B5AEE2D6704 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,24 +283,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DragDropiOS-Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBB9A52BED19F5738B6E2BAB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DragDropiOS-Example_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -492,7 +467,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -510,14 +485,13 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sheer.DragDropiOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5EDE482BCD4575D1E119F14 /* Pods-DragDropiOS-Example_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -534,14 +508,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 812B5E784CB058135AA0CCAB /* Pods-DragDropiOS-Example_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -554,7 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

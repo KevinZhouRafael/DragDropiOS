@@ -2,8 +2,8 @@
 //  DragDropiOS.h
 //  DragDropiOS
 //
-//  Created by kai zhou on 15/03/2017.
-//  Copyright © 2017 kai zhou. All rights reserved.
+//  Created by kai zhou on 2018/12/5.
+//  Copyright © 2018 kai zhou. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

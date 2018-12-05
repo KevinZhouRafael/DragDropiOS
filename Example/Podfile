@@ -1,12 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
 use_frameworks!
 
 target 'DragDropiOS-Example' do
   
   pod 'DragDropiOS', :path => '../'
 
-  target 'DragDropiOS-Example_Tests' do
-    inherit! :search_paths
-
-    
-  end
+#  target 'DragDropiOS-Example_Tests' do
+#    inherit! :search_paths
+#
+#    
+#  end
 end

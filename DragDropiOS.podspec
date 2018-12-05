@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DragDropiOS'
-  s.version          = '0.2.4'
+  s.version          = '0.2.5'
   s.summary          = 'DragDropiOS is a drag and drop manager on iOS.'
 
 # This description is used to generate tags and improve search results.
@@ -38,6 +38,6 @@ DragDropiOS is a drag and drop manager on iOS.The library supports drag and drop
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+   s.frameworks = 'UIKit', 'QuartzCore'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

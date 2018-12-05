@@ -56,7 +56,7 @@ extension ViewController{
         
         let overInfo = tableModels[indexPath.item]
         
-        debugPrint("move over index: \(indexPath.item)")
+//        debugPrint("move over index: \(indexPath.item)")
         
         //drag source is mouse over item（self）
         if overInfo.fruit != nil{

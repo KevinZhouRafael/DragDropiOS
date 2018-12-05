@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="DragDropiOS-Example" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DragDropiOS" TARGET_NAME="DragDropiOS_Example" CONFIG_NAME="Debug" SCHEME_NAME="DragDropiOS-Example" RUN_TARGET_PROJECT_NAME="DragDropiOS" RUN_TARGET_NAME="DragDropiOS_Example" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-    <envs />
-    <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-      <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-    </EXTENSION>
-    <method />
-  </configuration>
-</component>
