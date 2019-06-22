@@ -10,8 +10,7 @@ import UIKit
 import DragDropiOS
 
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,DragDropCollectionViewDelegate,
-                        UITableViewDelegate,UITableViewDataSource, DragDropTableViewDelegate {
+class ViewController: UIViewController {
     var timer:Timer!
     
     var collectionModels:[Model] = [Model]()
@@ -82,7 +81,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
 
     func createRandomMan(start: Int, end: Int) ->() ->Int? {
-
+        
         var nums = [Int]();
         for i in start...end{
             nums.append(i)
@@ -90,7 +89,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         func randomMan() -> Int? {
             if !nums.isEmpty {
-                let index = Int(arc4random_uniform(UInt32(nums.count)))
+                //                let index = Int(arc4random_uniform(UInt32(nums.count)))
+                let index = Int.random(in: 0 ..< nums.count)
                 return nums.remove(at: index)
             }
             else {
@@ -132,8 +132,29 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //3、Reload data
         dragDropCollectionView.reloadData()
     }
+
+}
+
+extension ViewController:UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
-    //MARK: UICollectionViewDelegate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = tableModels[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: DragDropTableViewCell.IDENTIFIER, for: indexPath) as! DragDropTableViewCell
+        cell.updateData(model)
+        return cell
+        
+    }
+}
+
+
+extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -151,23 +172,4 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         return cell
     }
-    
-   
-    //MARK: UITableViewDelegate
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableModels.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = tableModels[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: DragDropTableViewCell.IDENTIFIER, for: indexPath) as! DragDropTableViewCell
-        cell.updateData(model)
-        return cell
-        
-    }
-
 }

@@ -9,8 +9,7 @@
 import UIKit
 import DragDropiOS
 
-// MARK : DragDropTableViewDelegate
-extension ViewController{
+extension ViewController:DragDropTableViewDelegate{
     func tableView(_ tableView: UITableView, touchBeginAtIndexPath indexPath: IndexPath) {
         
         clearCellsDrogStatusOfTableView()

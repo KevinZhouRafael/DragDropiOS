@@ -100,7 +100,7 @@ class DragDropView: UIView,Draggable,Droppable{
     }
     
     func dropComplete(_ dragInfo : AnyObject,dropInfo:AnyObject?, atRect rect: CGRect) -> Void{
-        model = dragInfo as! Model
+        model = dragInfo as? Model
         label.text = model?.fruit?.name
     }
     

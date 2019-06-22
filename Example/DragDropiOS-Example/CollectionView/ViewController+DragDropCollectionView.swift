@@ -9,8 +9,7 @@
 import UIKit
 import DragDropiOS
 
- // MARK : DragDropCollectionViewDelegate
-extension ViewController{
+extension ViewController:DragDropCollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, touchBeginAtIndexPath indexPath: IndexPath) {
         
         clearCellsDrogStatusOfCollectionView()
@@ -65,7 +64,7 @@ extension ViewController{
         
         clearCellsDrogStatusOfCollectionView()
         
-        for cell in collectionView.visibleCells{
+        for _ in collectionView.visibleCells{
             
 
                 if overInfo.fruit == nil {
