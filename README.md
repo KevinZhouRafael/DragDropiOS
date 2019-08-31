@@ -145,9 +145,8 @@ If the view implement the Dropable Interface, the view can drop in.
 Rafael Zhou
 
 - Email me: <wumingapie@gmail.com>
-- Follow me on **Twitter**: [**@wumingapie**](https://twitter.com/wumingapie)
 - Contact me on **Facebook**: [**wumingapie**](https://www.facebook.com/wumingapie)
-- Contact me on **LinkedIn**: [**Rafael**](https://www.linkedin.com/in/rafael-zhou-7230943a/)
+- Contact me on **Wechat&QQ**: 358545592
 
 
 ## License
