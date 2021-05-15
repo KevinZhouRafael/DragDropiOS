@@ -265,19 +265,15 @@ open class DragDropManager:NSObject,UIGestureRecognizerDelegate {
                         self.bundle!.overDroppableView = currentOverView
 
                     }
-                    
-                    
-                    
-                    //checkForEdgesAndScroll when every recognizer changed
-                    if let dropAble = bundle.overDroppableView as? Droppable {
-                        if dropAble.responds(to: #selector(Droppable.checkFroEdgesAndScroll(_:inRect:))) {
-                            dropAble.checkFroEdgesAndScroll!(bundle.dragInfo, inRect: rect)
-                        }
-                    }
-                    
                 }
                 
-               
+                //checkForEdgesAndScroll when every recognizer changed
+                if let dropAble = bundle.overDroppableView as? Droppable {
+                    if dropAble.responds(to: #selector(Droppable.checkFroEdgesAndScroll(_:inRect:))) {
+                        dropAble.checkFroEdgesAndScroll!(bundle.dragInfo, inRect: bundle.representationImageView.frame)
+                    }
+                }
+                
             case .ended :
                 
 //                if bundle.sourceDraggableView != bundle.overDroppableView { // if we are actually dropping over a new view.
